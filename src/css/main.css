@@ -1,0 +1,248 @@
+@font-face {
+  font-family: 'gordita';
+  src: url('https://fonts.luna1.co/gordita/hinted/hinted-Gordita-Medium.eot');
+  src: url('https://fonts.luna1.co/gordita/hinted/hinted-Gordita-Medium.eot?#iefix') format('embedded-opentype'),
+      url('https://fonts.luna1.co/gordita/hinted/hinted-Gordita-Medium.woff2') format('woff2'),
+      url('https://fonts.luna1.co/gordita/hinted/hinted-Gordita-Medium.woff') format('woff'),
+      url('https://fonts.luna1.co/gordita/hinted/hinted-Gordita-Medium.ttf') format('truetype'),
+      url('https://fonts.luna1.co/gordita/hinted/hinted-Gordita-Medium.svg#Gordita-Medium') format('svg');
+  font-weight: bold;
+}
+
+/* variables */
+:root {
+    /* color */     
+    --c-white:      #fff;       /* AAA:dark */
+    --c-grey:       #edf1f2;    /* AAA:dark */
+    --c-grey-medium:#9ca6af;    /* AAA:dark */
+    --c-grey-dark:  #232c38;    /* AAA:light */
+    --c-black:      #151b26;    /* AAA: light */
+    --c-turquoise:  #50cbfc;    /* AAA:dark */
+    --c-blue-light: #50cbfc;    /* AAA:dark */
+    --c-blue:       #008ce3;    /* AA:dark AA:light-bold/19px */
+    --c-blue-dark:  #032a53;    /* AAA:light */
+    --c-purple:     #796eff;    /* AA:dark AA:light-bold/19px */
+    --c-green:      #37c5ab;    /* AA:dark */
+    --c-yellow:     #fee034;    /* AAA:dark */
+    --c-red:        #ef6e7c;    /* AAA:dark */
+
+    /* size                     This is what the original size was 
+                                before being conveted to rems 
+                                and scaling up with the viewport */                  
+    --s-100:        .0625rem;   /* 1px */
+    --s-200:        .1875rem;   /* 3px border-radius */
+    --s-300:        .8125rem;   /* 13px small font */
+    --s-400:            1rem;   /* 16px basic font */  
+    --s-500:         1.25rem;   /* 20px big font */  
+    --s-600:        1.875rem;   /* 30px big padding */
+    --s-800:        15.25rem;   /* 244px big sidebar width */
+    --s-900:        calc( var(--s-800) * 2); /* 488px big main width */
+}
+
+
+html {
+    background: #fff;
+    box-sizing: border-box;
+    font-display: swap;
+    font-family: 'gordita', sans-serif;
+    font-size: 1rem;
+    font-size: calc(.875em + .875vw );
+    font-weight: bold;
+    color: var(--c-black);
+}
+
+a {
+    color: var(--c-blue);
+    font-weight: bold;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: 1.5;
+    letter-spacing: .02em;
+}
+
+/* 735563712461979 */
+button,
+input {
+    font-size: var(--s-300);
+    border-radius: var(--s-200);
+    padding: var(--s-200) var(--s-200);
+    -webkit-appearance: none;
+}
+
+button {
+    padding: .5em;
+}
+
+.theme--blue-dark {
+    background-color: var(--c-blue-dark);
+    color: var(--c-grey);
+}
+
+.theme--purple-lightText {
+    background-color: var(--c-purple);
+    color: var(--c-grey);
+}
+
+.theme--yellow {
+    background-color: var(--c-yellow);
+    color: var(--c-blue-dark);
+}
+
+.Layout {
+    position: relative;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.Layout__sidebar {
+    position: relative;
+    z-index: 1;
+    flex-basis: var(--s-800);
+    flex-grow: 1;
+}
+
+.Layout__sidebar > * {
+    position: sticky;
+    top:0;
+}
+
+.Layout__main {
+    background-color: var(--c-grey);
+    flex-basis: var(--s-900);
+    flex-grow: 3;
+    max-width: 100%;
+    padding: var(--s-400);
+}
+
+.ProjectForm {
+    padding: var(--s-400);
+    max-width: 100%;
+}
+
+.ProjectForm > * {
+    width: 100%;
+    display: block;
+    margin: 0;
+}
+
+.ProjectForm__logo {
+    display: block;
+    width: 25%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ProjectForm > * + * {
+    margin-top: 1rem;
+}
+
+.ProjectForm__label {
+    font-size: var(--s-300);
+}
+
+.ProjectForm__input {
+    display: block;
+    font-size: var(--s-300);
+    border: var(--s-100) solid var(--c-grey-medium);
+}
+
+.ProjectForm__submit {
+    color: var(--c-blue-dark);
+    background-color: var(--c-green);
+    font-size: var(--s-400);
+    border: none;
+}
+
+.Project__header {
+    margin-bottom: var(--s-500);
+}
+
+.Project__header > * {
+    margin: 0;
+}
+
+.Project__name {
+    font-size: var(--s-500);
+    margin: 0;
+    color: var(--c-black);
+}
+
+.Project__kicker {
+    font-size: var(--s-300);
+    margin: 0;
+}
+
+.Project__showHidden {
+    margin-top: var(--s-400);
+    color: var(--c-white);
+    text-align: left;
+    border: none;
+    border-radius: var(--s-200);
+    font-size: var(--s-300);
+    background-color: var(--c-purple);
+    display: block;
+    padding: var(--s-200) var(--s-400);
+}
+
+.Tasks {
+    margin: 0;
+    padding: 0;
+}
+
+.Tasks > * {
+    margin: 0 0 var(--s-300);
+}
+
+.Task {
+    background-color: var(--c-white);
+    border-radius: var(--s-200);
+    display: block;
+    max-height: 30rem;
+    max-width: var(--s-900);
+    opacity: .99999;
+    padding: 0;
+    transform: scaleY(.99999);
+    transition: transform .5s .05s, opacity 1s .05s, max-height 0s, margin 0s, visibility 0s;
+}
+
+.Task[hidden]:not(.Task--showHidden) {
+    display: block;
+    max-height: 0;
+    margin: 0; 
+    opacity: .00001;
+    transform: scaleY(.9);
+    transition: transform .25s, opacity .5s, max-height 0s .5s, margin 0s .5s, visibility 0s .5s;
+    visibility: hidden;
+}
+
+.Task__link {
+    font-size: var(--s-400);
+    display: block;
+    padding: var(--s-400);
+}
+
+.Task__hide {
+    color: var(--c-grey-medium);
+    text-align: left;
+    border: none;
+    border-radius: 0 0 var(--s-200) var(--s-200);
+    font-size: var(--s-300);
+    background-color: var(--c-grey-dark);
+    display: block;
+    width: 100%;
+    padding: var(--s-200) var(--s-400);
+}
